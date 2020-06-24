@@ -1,0 +1,153 @@
+﻿
+@model TestApp_MVC.Controllers.HomeController.StudentData
+@model IEnumerable<TestApp_MVC.Controllers.HomeController.StudentData>
+
+@{
+    ViewBag.Title = "Students Module";
+}
+
+<div class="jumbotron">
+    Add Student
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm("SaveStudent", "HomeController", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <table style="border: 0px solid black; background-color: WhiteSmoke;">
+                <tr id="TaxReturn">
+                    <td class="editor-label" style="padding-left:20px">
+                        @Html.Label("First Name")
+                    </td>
+                    <td class="editor-field">
+                        @@Html.EditorFor(model => model.FirstName)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="editor-label" style="padding-left:20px">
+                        @Html.Label("Last Name")
+                    </td>
+                    <td class="editor-field">
+                        @@Html.EditorFor(model => model.LastName)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="editor-label" style="padding-left:20px">
+                        @Html.Label("Email")
+                    </td>
+                    <td class="editor-field">
+                        @@Html.EditorFor(model => model.Email)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="editor-label" style="padding-left:20px">
+                        @Html.Label("Pocket Money")
+                    </td>
+                    <td class="editor-field">
+                        @@Html.EditorFor(model => model.PckMoney)
+                    </td>
+                </tr>
+
+                <tr id="TaxReturn">
+                    <td class="editor-label" style="padding-left:20px">
+                        @Html.Label("Password")
+                    </td>
+                    <td class="editor-field">
+                        @@Html.EditorFor(model => model.Password)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="editor-label" style="padding-left:20px">
+                        @Html.Label("Age")
+                    </td>
+                    <td class="editor-field">
+                        @@Html.EditorFor(model => model.Age)
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="editor-label" style="padding-left:20px">
+                        @Html.Label("City")
+                    </td>
+                    <td class="editor-field">
+                        @@Html.EditorFor(model => model.City)
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="editor-label" style="padding-left:20px">
+                        @Html.Label("State")
+                    </td>
+                    <td class="editor-field">
+                        @@Html.EditorFor(model => model.State)
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="editor-label" style="padding-left:20px">
+                        @Html.Label("Zip")
+                    </td>
+                    <td class="editor-field">
+                        @@Html.EditorFor(model => model.Zip)
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="editor-label" style="padding-left:20px">
+                        @Html.Label("Country")
+                    </td>
+                    <td class="editor-field">
+                        @@Html.EditorFor(model => model.Country)
+
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:center">
+                        <input type="submit" id="submit" name="submit" value="Save" />
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>
+    <div>
+        @if (Model != null)
+        {
+            <div id="mydiv">
+                <table id="myTable" class="table table-striped">
+                    <thead>
+                        <tr style="background-color:rgb(70,130,180);color:white">
+                            <th style="width: 12px !important">Id</th>
+                            <th style="width: 55px !important">Name</th>
+                            <th style="width: 229px !important">Email</th>
+                            <th style="width: 130px !important">Pocket Money</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{int i = 1;
+                            string type = "";
+                            type = "Master Data";}
+                        @foreach (var device in Model)
+                        {
+                            <tr>
+
+                                <td>@device.ID</td>
+                                <td>@device.FirstName </td>
+                                <td>@device.Email</td>
+                                <td>@device.PckMoney</td>                                
+                            </tr>
+                            i++;
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+
+        }
+    </div>
+</div>
