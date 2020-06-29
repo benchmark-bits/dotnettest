@@ -1,0 +1,43 @@
+﻿@model TestApp_MVC.Models.Student
+<div class="row">
+    <div class="jumbotron">
+        Student with 2nd Highest Pocket Money
+    </div>
+    <div class="col-md-12" style="border: 0px solid black; background-color: WhiteSmoke;">
+        <table>
+            <tr id="TaxReturn">
+                <td class="editor-label" style="padding-left:20px">
+                    @Html.Label("First Name")
+                </td>
+                <td class="editor-field">
+                    @Html.DisplayFor(model => model.FirstName)
+                </td>                
+            </tr>
+
+            <tr>
+                <td class="editor-label" style="padding-left:20px">
+                    @Html.Label("Last Name")
+                </td>
+                <td class="editor-field">
+                    @Html.DisplayFor(model => model.LastName)
+                </td>
+            </tr>
+            <tr>
+                <td class="editor-label" style="padding-left:20px">
+                    @Html.Label("Email")
+                </td>
+                <td class="editor-field">
+                    @Html.DisplayFor(model => model.Email)
+                </td>
+            </tr>
+            <tr>
+                <td class="editor-label" style="padding-left:20px">
+                    @Html.Label("Pocket Money")
+                </td>
+                <td class="editor-field">
+                    @Html.DisplayFor(model => model.PocketMoney)
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

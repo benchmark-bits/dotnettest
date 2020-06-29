@@ -1,0 +1,79 @@
+﻿@model TestApp_MVC.Models.Student
+<div class="row">
+    <div class="jumbotron">
+        Add Student
+    </div>
+    <div class="col-md-12" style="border: 0px solid black; background-color: WhiteSmoke;">
+        @using (Html.BeginForm("SaveStudent", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <table>
+                <tr id="TaxReturn">
+                    <td class="editor-label" style="padding-left:20px">
+                        @Html.Label("First Name")
+                    </td>
+                    <td class="editor-field">
+                        @Html.EditorFor(model => model.FirstName)
+                    </td>
+                    <td>
+                        @Html.ValidationMessageFor(Model => Model.FirstName)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="editor-label" style="padding-left:20px">
+                        @Html.Label("Last Name")
+                    </td>
+                    <td class="editor-field">
+                        @Html.EditorFor(model => model.LastName)
+                    </td>
+                    <td>
+                        @Html.ValidationMessageFor(Model => Model.LastName)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="editor-label" style="padding-left:20px">
+                        @Html.Label("Email")
+                    </td>
+                    <td class="editor-field">
+                        @Html.EditorFor(model => model.Email)
+                    </td>
+                    <td>
+                        @Html.ValidationMessageFor(Model => Model.Email)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="editor-label" style="padding-left:20px">
+                        @Html.Label("Pocket Money")
+                    </td>
+                    <td class="editor-field">
+                        @Html.EditorFor(model => model.PocketMoney)
+                    </td>
+                    <td>
+                        @Html.ValidationMessageFor(Model => Model.PocketMoney)
+                    </td>
+                </tr>
+
+                <tr id="TaxReturn">
+                    <td class="editor-label" style="padding-left:20px">
+                        @Html.Label("Password")
+                    </td>
+                    <td class="editor-field">
+                        @Html.PasswordFor(model => model.Password)
+                    </td>
+                    <td>
+                        @Html.ValidationMessageFor(Model => Model.Password)
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:center">
+                        <input type="submit" id="submit" name="submit" value="Save" />
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>
+</div>

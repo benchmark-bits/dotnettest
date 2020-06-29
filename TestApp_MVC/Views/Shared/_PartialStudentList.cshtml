@@ -1,0 +1,34 @@
+﻿@model IEnumerable<TestApp_MVC.Models.Student>
+<div class="row">
+    <div class="jumbotron">
+        Student List
+    </div>
+    <div>
+        @if (Model != null)
+        {
+            <div id="mydiv">
+                <table id="myTable" class="table table-striped">
+                    <thead>
+                        <tr style="background-color:rgb(70,130,180);color:white">
+                            <th style="width: 12px !important">Id</th>
+                            <th style="width: 55px !important">Name</th>
+                            <th style="width: 229px !important">Email</th>
+                            <th style="width: 130px !important">Pocket Money</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var device in Model)
+                        {
+                            <tr>
+                                <td>@device.Id</td>
+                                <td>@device.FirstName </td>
+                                <td>@device.Email</td>
+                                <td>@device.PocketMoney</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+</div>
